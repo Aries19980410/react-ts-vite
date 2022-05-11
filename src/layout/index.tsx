@@ -7,7 +7,7 @@ import Index from "@/pages/home";
 // import User from "../user/user";
 import { Layout } from 'antd';
 import React, { Component } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 const { Footer, Sider, Content } = Layout;
 
@@ -19,16 +19,16 @@ class Admin extends Component<any, any> {
           <LeftNav />
         </Sider>
         <Layout>
-          <Header />
+          <Header name={''} />
           <Content style={{ background: '#fff', margin: '10px', padding: '10px' }}>
-            <Switch>
-              <Route path="/index" component={Index} />
+            <Routes>
+              <Route path="/index" element={<Index/>} />
               {/* <Route path="/user" component={User} />
               <Route path="/role" component={Role} />
               <Route path="/category" component={Category} />
               <Route path="/product" component={Product} /> */}
-              <Redirect to="/index"></Redirect>
-            </Switch>
+              <Route path="/" element={<Navigate to="/" replace />} ></Route>
+            </Routes>
           </Content>
           <Footer style={{ background: '#ccc' }}>舒服</Footer>
         </Layout>

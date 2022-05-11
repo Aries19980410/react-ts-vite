@@ -2,7 +2,6 @@ import menuList from "@/router/menu";
 import { formateDate } from '@/utils/dateUtils';
 import { Button, message, Modal } from 'antd';
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import './index.less';
 type StateType = {
   currentTime: any;
@@ -97,4 +96,4 @@ class Header extends Component<any,any> {
   }
 }
 
-export default withRouter(Header);
+export default Header;

@@ -3,7 +3,7 @@ import menuList from '@/router/menu';
 import Icon from '@ant-design/icons';
 import { Menu } from 'antd';
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './index.less';
 
 type StateType = {
@@ -135,4 +135,4 @@ class LeftNav extends Component<any, any> {
  向外暴露使用高阶withRouter()包装非路由组件 ，
  新组件像leftNav传递三个参数：location、histroy 
 */
-export default withRouter(LeftNav);
+export default LeftNav;
